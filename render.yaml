@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: fahrenheit-celsius-ml
+    runtime: python
+    plan: free
+    rootDir: fahrenheit-celsius-ml-20261008T140905Z-1-001/fahrenheit-celsius-ml
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT
+    healthCheckPath: /
